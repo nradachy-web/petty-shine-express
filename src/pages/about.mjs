@@ -16,7 +16,7 @@ export default {
     <nav class="crumbs" aria-label="Breadcrumb"><a href="${base}/">Home</a><span>/</span><span>About</span></nav>
     <p class="eyebrow">About</p>
     <h1>Built by a detailer.</h1>
-    <p class="lede">${esc(site.name)} comes from ${esc(site.owner)}, the owner of <a href="${esc(site.parentBrand.url)}" rel="noopener" style="color:var(--blue-2);font-weight:600">${esc(site.parentBrand.name)}</a>, the paint correction, ceramic coating and paint protection film shop in ${esc(site.address.city)}.</p>
+    <p class="lede">${esc(site.name)} comes from ${esc(site.owner)}, the owner of <a href="${esc(site.parentBrand.url)}" rel="noopener" style="color:var(--blue-2);font-weight:600;text-decoration:underline;text-underline-offset:3px">${esc(site.parentBrand.name)}</a>, the paint correction, ceramic coating and paint protection film shop in ${esc(site.address.city)}.</p>
   </div>
 </section>
 

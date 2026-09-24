@@ -23,6 +23,7 @@ export default {
 <section class="section-tight">
   <div class="wrap loc-grid">
     <div class="reveal">
+      <h2 class="sr-only">Address, status and phone</h2>
       <div class="loc-card">
         <h3>Address</h3>
         <p class="big">${esc(addressLine(site))}</p>

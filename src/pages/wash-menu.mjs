@@ -24,6 +24,7 @@ export default {
 
 <section class="section-tight">
   <div class="wrap">
+    <h2 class="sr-only">The four touchless washes</h2>
     ${washCards(ctx)}
     <p class="menu-note">Prices as posted on the wash menu at the entrance. Self-serve bay and vacuum pricing is posted on site.</p>
   </div>

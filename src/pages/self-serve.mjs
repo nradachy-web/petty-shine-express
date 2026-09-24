@@ -22,6 +22,7 @@ export default {
 
 <section class="section-tight">
   <div class="wrap">
+    <h2 class="sr-only">The bays</h2>
     <div class="split-media wide reveal">
       ${img(ctx, "bays", { alt: "Row of self-serve bays with blue pressure wands, pay boxes and the blue roof", sizes: "100vw", width: 1600 })}
       <span class="caption">${site.facts.bays} self-serve bays under the blue roof</span>

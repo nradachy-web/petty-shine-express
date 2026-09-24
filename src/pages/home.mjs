@@ -36,6 +36,7 @@ export default {
 
 <section class="section">
   <div class="wrap">
+    <h2 class="sr-only">Why wash at Petty Shine Express</h2>
     <div class="pillars">
       <article class="pillar reveal" style="--i:0">
         <div class="pillar-icon">${icons.droplet}</div>

@@ -22,6 +22,7 @@ export default {
 </section>
 <section class="section-tight">
   <div class="wrap" style="max-width:860px">
+    <h2 class="sr-only">All questions</h2>
     ${faqList(faqs, { open: 1 })}
   </div>
 </section>
