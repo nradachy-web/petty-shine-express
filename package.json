@@ -1,0 +1,13 @@
+{
+  "name": "petty-shine-express",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Petty Shine Express, self service and touchless automatic car wash. Static site for GitHub Pages, no dependencies.",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "node build.mjs && python3 -m http.server 4173 -d dist",
+    "check": "node build.mjs && node scripts/check.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

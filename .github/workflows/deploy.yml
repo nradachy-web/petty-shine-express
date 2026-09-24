@@ -1,0 +1,55 @@
+name: Deploy to GitHub Pages
+
+# Repository variables drive the two modes, no code change needed:
+#   PREVIEW (now):  BASE_PATH=/petty-shine-express, SITE_URL unset, INDEXABLE unset
+#                   -> https://nradachy-web.github.io/petty-shine-express/, noindex
+#   PRODUCTION:     BASE_PATH unset, SITE_URL=https://www.<domain>, INDEXABLE=1,
+#                   CUSTOM_DOMAIN=www.<domain>
+#                   -> served at the domain root, indexable, CNAME written
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build static site
+        run: node build.mjs
+        env:
+          BASE_PATH: ${{ vars.BASE_PATH }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          INDEXABLE: ${{ vars.INDEXABLE }}
+          GOOGLE_TAG_ID: ${{ vars.GOOGLE_TAG_ID }}
+          WEB3FORMS_KEY: ${{ vars.WEB3FORMS_KEY }}
+      - name: Write CNAME (production only)
+        if: ${{ vars.CUSTOM_DOMAIN != '' }}
+        run: echo "${{ vars.CUSTOM_DOMAIN }}" > dist/CNAME
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
