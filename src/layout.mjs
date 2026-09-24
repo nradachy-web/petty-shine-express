@@ -6,7 +6,7 @@ export const esc = (s = "") =>
 /* Intrinsic sizes of the rendered WebP sets (largest width and its height). */
 const IMAGES = {
   "hero-sign": { widths: [480, 800, 1200, 1600, 2400], w: 2400, h: 1404 },
-  "hero-sign-tall": { widths: [480, 700, 1000], w: 1000, h: 750 },
+  "hero-sign-mobile": { widths: [480, 720, 960], w: 960, h: 1200 },
   building: { widths: [640, 1000, 1400, 2000], w: 2000, h: 1080 },
   bays: { widths: [640, 1000, 1600], w: 1600, h: 498 },
   entrance: { widths: [640, 1000, 1400], w: 1400, h: 893 },

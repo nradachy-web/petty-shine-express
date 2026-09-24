@@ -15,7 +15,7 @@ export default {
 <section class="hero">
   <div class="hero-media">
     <picture>
-      <source media="(max-width: 760px)" srcset="${heroSrc("hero-sign-tall", [480, 700, 1000])}" sizes="100vw">
+      <source media="(max-width: 760px)" srcset="${heroSrc("hero-sign-mobile", [480, 720, 960])}" sizes="100vw" width="960" height="1200">
       <img src="${base}/assets/img/hero-sign-1600.webp" srcset="${heroSrc("hero-sign", [800, 1200, 1600, 2400])}" sizes="100vw" width="2400" height="1404" alt="Petty Shine Express roadside sign reading self service and touchless automatic, with the wash building and bays behind it" fetchpriority="high" decoding="async">
     </picture>
     <div class="hero-scrim"></div>
